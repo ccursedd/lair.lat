@@ -1,0 +1,80 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOID ADMIN</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="admin-container">
+
+    <div class="login-box" id="loginBox">
+      <h1>ADMIN LOGIN</h1>
+
+      <input type="email" id="email" placeholder="Gmail" />
+      <input type="password" id="password" placeholder="Password" />
+
+      <button onclick="login()">Login</button>
+
+      <p id="loginMessage"></p>
+    </div>
+
+    <div class="dashboard hidden" id="dashboard">
+
+      <div class="dashboard-top">
+        <h1>VOID ADMIN PANEL</h1>
+        <button onclick="logout()">Logout</button>
+      </div>
+
+      <div class="admin-grid">
+
+        <div class="admin-card">
+          <h2>Add Product</h2>
+
+          <input type="text" id="productName" placeholder="Product Name" />
+          <input type="text" id="productPrice" placeholder="Price" />
+          <input type="text" id="productImage" placeholder="Image URL" />
+          <input type="text" id="productCategory" placeholder="Category" />
+
+          <button onclick="addProduct()">Add Product</button>
+        </div>
+
+        <div class="admin-card">
+          <h2>Add Category</h2>
+
+          <input type="text" id="categoryName" placeholder="Category Name" />
+
+          <button onclick="addCategory()">Add Category</button>
+        </div>
+
+      </div>
+
+      <div class="admin-products">
+        <h2>Manage Products</h2>
+
+        <div id="adminProductsList"></div>
+      </div>
+
+      <div class="admin-products">
+        <h2>Manage Categories</h2>
+
+        <div id="adminCategoriesList"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
